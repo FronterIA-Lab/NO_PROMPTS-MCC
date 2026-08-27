@@ -1,0 +1,19 @@
+NO.PROMPTS · Método de Calibración Contextual
+FronterIA-Lab · Sonora
+Manual v0.9 · Dolores Méndez Valdez
+
+CÓMO ABRIRLO
+1. Abrir abrir-aqui.html (no necesita internet).
+2. Escribe las tres líneas de Yoliztli. No entregues cifras en crudo: usa proporciones, base 100 o factor propio.
+3. Dos minutos: exigencias 1 y 12. Diez minutos: movimiento A + 10. Si duele: las 16.
+4. Al terminar: las ocho preguntas de salida. Si la 7 y la 8 salen mal, cierra el chat.
+
+ARCHIVOS
+- abrir-aqui.html
+- docs/NO-PROMPTS-manual-v0.9.pdf   (el original)
+- docs/manual-no-prompts.md         (edición en texto)
+- docs/checklist.md
+- plantillas/
+
+Un prompt le pide a la máquina que adivine mejor.
+Una exigencia la obliga a mostrar de dónde salió el número.
