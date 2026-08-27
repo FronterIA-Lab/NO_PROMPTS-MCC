@@ -16,6 +16,7 @@ ok((ROOT / "pack/abrir-aqui.html").is_file(), "falta abrir-aqui.html")
 ok((ROOT / "css/mcc.css").is_file(), "falta mcc.css")
 ok((ROOT / "js/app.js").is_file(), "falta app.js")
 ok((ROOT / "assets/web/soberania-cognitiva.jpg").is_file(), "falta imagen hero")
+ok((ROOT / "favicon.ico").is_file(), "falta favicon")
 
 html = (ROOT / "index.html").read_text(encoding="utf-8")
 ok("cdn" not in html.lower() and "googleapis" not in html.lower(), "landing con CDN")
