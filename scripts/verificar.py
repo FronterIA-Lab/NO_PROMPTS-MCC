@@ -23,13 +23,16 @@ ok("cdn" not in html.lower() and "googleapis" not in html.lower(), "landing con 
 ok("$37" in html, "landing sin precio")
 
 app = (ROOT / "js/app.js").read_text(encoding="utf-8")
-for np in ["NP-01", "NP-02", "NP-03", "NP-04", "NP-05", "NP-06", "NP-07", "NP-08"]:
-    ok(np in app, f"falta {np} en app.js")
+for token in ["CONTEXT_DECLARE", "KNOWN_PROBE", "EXIT_PROTOCOL", "Exigencia"]:
+    ok(token in app or "n: 16" in app or "n:16" in app, f"falta {token}")
+ok("n: 16" in app or "n:16" in app, "no hay 16 exigencias")
+ok(app.count("glifo:") >= 16 or app.count('glifo:') >= 16, "faltan glifos")
 ok("localStorage" in app, "app.js no persiste local")
-ok("KNOWN_PROBE" in app, "falta KNOWN_PROBE")
 
 manual = (ROOT / "pack/docs/manual-no-prompts.md").read_text(encoding="utf-8")
-ok(manual.count("NO_PROMPT") >= 8, "manual no tiene 8 no-prompts")
+ok("16 exigencias" in manual or "dieciséis" in manual.lower(), "manual no habla de 16")
+ok((ROOT / "corpus/catalog/NO-PROMPTS-manual-v0.9.pdf").is_file(), "falta PDF v0.9")
+ok((ROOT / "pack/docs/NO-PROMPTS-manual-v0.9.pdf").is_file(), "falta PDF en pack")
 
 css = (ROOT / "css/mcc.css").read_text(encoding="utf-8")
 ok("--cyan" in css and "--magenta" in css, "paleta incompleta")

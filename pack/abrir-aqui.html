@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pack No-Prompts MCC · Yoliztli</title>
-  <meta name="description" content="Herramienta local del Pack No-Prompts MCC. Tus datos no salen de este navegador.">
+  <title>NO.PROMPTS · 16 exigencias · FronterIA-Lab</title>
+  <meta name="description" content="Manual v0.9 en herramienta local. Dieciséis exigencias del MCC. Tus datos no salen de este navegador.">
   <link rel="icon" href="../favicon.ico" sizes="32x32">
   <link rel="icon" href="../assets/web/favicon.svg" type="image/svg+xml">
   <meta name="theme-color" content="#070708">
@@ -21,15 +21,15 @@
         <rect x="22" y="12" width="4" height="4" fill="#ff3dac"/>
         <rect x="12" y="22" width="4" height="4" fill="#5ffbf1"/>
       </svg>
-      MCC
+      NO.PROMPTS
     </a>
-    <button class="navbtn active" type="button" data-view="inicio">Rito</button>
+    <button class="navbtn active" type="button" data-view="inicio">Empieza aquí</button>
     <button class="navbtn" type="button" data-view="yoliztli">Yoliztli</button>
-    <button class="navbtn" type="button" data-view="probe">Known Probe</button>
-    <button class="navbtn" type="button" data-view="prompts">8 No-Prompts</button>
-    <button class="navbtn" type="button" data-view="checklist">Checklist</button>
+    <button class="navbtn" type="button" data-view="prompts">16 exigencias</button>
+    <button class="navbtn" type="button" data-view="probe">El calibrador</button>
+    <button class="navbtn" type="button" data-view="checklist">8 de salida</button>
+    <button class="navbtn" type="button" data-view="hoja">Una hoja</button>
     <button class="navbtn" type="button" data-view="isd">ISD</button>
-    <button class="navbtn" type="button" data-view="glifos">16 Glifos</button>
     <p class="kicker" style="margin:1.2rem 0.55rem 0.4rem">Archivo</p>
     <button class="navbtn" type="button" id="export-json">Exportar JSON</button>
     <button class="navbtn" type="button" id="export-csv">Exportar CSV</button>
@@ -44,156 +44,177 @@
     <div id="toast" class="pill" style="opacity:0;transition:opacity .2s;margin-left:.6rem"> </div>
 
     <section class="view active" id="view-inicio">
-      <p class="kicker">Pack No-Prompts MCC · FronterIA-Lab [Indioyori]</p>
-      <h1 style="font-size:clamp(2rem,5vw,3.2rem)">El LLM es asistente,<br>no árbitro.</h1>
-      <p class="lede">Esta herramienta es el pack. No hay cuenta. No hay nube. Llenas tu Yoliztli, calibras con lo que ya sabes, copias el No-Prompt y auditas la respuesta. Si el modelo falla la calibración, la sesión se marca NO CALIBRADA.</p>
-      <div class="grid-3" style="margin:1.6rem 0">
-        <article class="stat"><b>01</b> Declara contexto</article>
-        <article class="stat"><b>02</b> Calibra (3.2)</article>
-        <article class="stat"><b>03</b> Bifurca y verifica</article>
+      <p class="kicker">FronterIA-Lab · Sonora · Manual v0.9</p>
+      <h1 style="font-size:clamp(2rem,5vw,3.4rem)">No son 500 prompts.<br>Son 16 exigencias.</h1>
+      <p class="lede">Un prompt le pide a la máquina que adivine mejor. Una exigencia la obliga a mostrar de dónde salió el número. Este manual no da respuestas. Da las preguntas que obligan a la máquina a mostrar su trabajo, y las señales para saber cuándo te está mintiendo con seguridad.</p>
+      <h3 style="margin-top:2rem">Tres cosas que hace la máquina cuando no la calibras</h3>
+      <div class="grid-3">
+        <article class="card"><span class="tag">1</span><h3>Habla igual cuando sabe y cuando inventa</h3><p>No tiene un medidor de confianza aparte. La seguridad que oyes es de la forma, no del contenido.</p></article>
+        <article class="card"><span class="tag">2</span><h3>Te da una y descartó cuatro</h3><p>Recibes UNA respuesta con cara de LA respuesta. Las otras no las reporta.</p></article>
+        <article class="card"><span class="tag">3</span><h3>Le responde a un cliente que no eres tú</h3><p>Si no le dices dónde estás parado, supone crédito, contador, dólar y leyes de otro país.</p></article>
       </div>
-      <p>Secuencia ritual: <strong>Capa 1 → Glifo 3.2 KNOWN_PROBE → Capa 2 → Capa 3 → Capa 4</strong>. No saltes la calibración. Es el equivalente a tarar una báscula antes de pesar.</p>
-      <div class="cta-row">
-        <button class="btn" type="button" data-view-jump="yoliztli">Empezar por Yoliztli</button>
-        <button class="btn ghost" type="button" id="ritual">Copiar los 8 en orden</button>
+      <h3 style="margin-top:2rem">No uses las dieciséis cada vez</h3>
+      <p>Son un banco, no una lista de tareas.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Si tienes</th><th>Usa</th></tr></thead>
+          <tbody>
+            <tr><td>Dos minutos</td><td>Exigencia 1 y exigencia 12</td></tr>
+            <tr><td>Diez minutos</td><td>Movimiento A completo (1 a 4) y exigencia 10</td></tr>
+            <tr><td>Una decisión que duele</td><td>Las dieciséis, en orden</td></tr>
+          </tbody>
+        </table>
       </div>
-      <hr class="line">
-      <blockquote class="quote">Una solución crea dependencia. Un marco crea capacidad. Entras con una pregunta; sales con criterio.</blockquote>
+      <div class="cta-row" style="margin-top:1.4rem">
+        <button class="btn" type="button" data-view-jump="yoliztli">Escribir las tres líneas</button>
+        <button class="btn ghost" type="button" id="ritual">Copiar el banco en orden</button>
+      </div>
+      <p style="margin-top:1.4rem;color:var(--paper-dim)">Si sólo te acuerdas de una cosa: pídele que prediga algo que tú ya sabes (10) y pídele su punto más flojo (12). Con esas dos, en treinta segundos, sabes con qué máquina estás hablando hoy.</p>
     </section>
 
     <section class="view" id="view-yoliztli">
-      <p class="kicker">Capa 1 · Ancla material</p>
-      <h2>Plantilla Yoliztli</h2>
-      <p>Yoliztli: vida / existencia / ser vivido. Esto no es un Excel de “finanzas personales”. Es el estándar conocido contra el que se calibra el modelo.</p>
+      <p class="kicker">Antes de empezar · Capa 1</p>
+      <h2>Tu Yoliztli, en tres líneas</h2>
+      <p>Este método no funciona si sólo recibes. Exige que pongas algo primero: tu vida vivida. Lo que sabes por haberlo vivido y la máquina no puede saber porque no estaba ahí. Escríbelo una vez y pégalo al inicio de cada conversación importante durante el próximo año.</p>
       <div class="row-2">
         <div>
-          <label for="p-quien">Soy</label>
-          <input id="p-quien" placeholder="Oficio, rol, sin romanticismo">
-          <label for="p-territorio">Territorio</label>
-          <input id="p-territorio" placeholder="Municipio, estado, país">
-          <label for="p-mes">Mes en curso</label>
-          <input id="p-mes" placeholder="Agosto 2026">
-          <label for="p-moneda">Moneda</label>
-          <input id="p-moneda" placeholder="MXN">
-          <label for="p-regimen">Régimen / forma de cobro</label>
-          <input id="p-regimen" placeholder="RESICO, honorarios, informal, cooperativa…">
-          <label for="p-banco">Circuito de pago</label>
-          <input id="p-banco" placeholder="SPEI, OXXO, efectivo, tanda…">
+          <label for="p-quien">Quién soy · oficio o negocio</label>
+          <input id="p-quien" placeholder="Taller, puesto, despacho…">
+          <label for="p-ciudad">Ciudad</label>
+          <input id="p-ciudad">
+          <label for="p-personas">Con cuántas personas</label>
+          <input id="p-personas">
+          <label for="p-anios">Años operando</label>
+          <input id="p-anios">
+          <label for="p-clientes">A quién le vendes o atiendes</label>
+          <input id="p-clientes">
+          <label for="p-pago">Cómo te pagan</label>
+          <input id="p-pago" placeholder="Efectivo, transferencia, a 15 días…">
         </div>
         <div>
-          <label for="p-tiempo">Tiempo disponible</label>
-          <input id="p-tiempo" placeholder="Horas/semana reales">
-          <label for="p-efectivo">Efectivo disponible ahora</label>
-          <input id="p-efectivo" placeholder="Cantidad">
-          <label for="p-deuda">Deuda o compromiso ineludible</label>
-          <input id="p-deuda" placeholder="Qué / cuánto / cuándo">
-          <label for="p-cuidado">Cuidado o trabajo no remunerado</label>
-          <input id="p-cuidado" placeholder="Quién depende de ti">
-          <label for="p-infra">Infraestructura</label>
-          <input id="p-infra" placeholder="Celular, café internet, banco, factura">
-          <label for="p-vocabulario">Vocabulario situado (no traducir)</label>
-          <input id="p-vocabulario" placeholder="Palabras de tu pueblo, oficio o casa">
+          <label for="p-dinero">Mi techo · dinero esta semana</label>
+          <input id="p-dinero" placeholder="Usa proporción o base 100 si no quieres pesos">
+          <label for="p-horas">Horas esta semana</label>
+          <input id="p-horas">
+          <label for="p-notengo">No tengo</label>
+          <input id="p-notengo" placeholder="contador / empleados / crédito / internet estable">
+          <label for="p-municipio">Mi terreno · municipio, estado</label>
+          <input id="p-municipio">
+          <label for="p-temporada">Temporada</label>
+          <input id="p-temporada">
+          <label for="p-terreno">Cómo te paga la gente / qué no llega</label>
+          <input id="p-terreno">
+          <label for="p-palabra">Palabra de tu oficio o lengua (exigencia 4)</label>
+          <input id="p-palabra">
         </div>
       </div>
+      <label for="p-velo">Velo para los números (no tienen por qué salir de tu casa)</label>
+      <select id="p-velo">
+        <option value="proporciones">Proporciones — «la nómina es el 38 % de lo que entra»</option>
+        <option value="base100">Base 100 — un mes de referencia vale 100</option>
+        <option value="factor">Factor propio — multiplicas por un número que sólo tú conoces</option>
+        <option value="crudo">Crudo — acepto el riesgo de entregar la cifra</option>
+      </select>
+      <label for="p-factor">Factor propio (si aplica; no lo pegues en el chat)</label>
+      <input id="p-factor" placeholder="Se queda aquí. Nunca se copia a la exigencia.">
+      <p class="kicker" style="margin-top:1.6rem">Las tres líneas</p>
+      <pre class="prompt-box" id="tres-lineas"></pre>
       <div class="cta-row" style="margin:1rem 0 2rem">
         <button class="btn" type="button" id="save-perfil">Guardar Yoliztli</button>
+        <button class="btn ghost" type="button" id="copy-tres">Copiar las tres líneas</button>
       </div>
+      <p>Lo que escribes en un chat viaja a un servidor que no es tuyo. Puedes desactivar cosas en la configuración; hazlo. Pero no construyas tu tranquilidad sobre una política que no controlas: construye el hábito de no entregar el dato en crudo.</p>
+      <h3>Números que no salen (opcional)</h3>
+      <p>Úsalos para KNOWN_PROBE y para ti. El velo decide qué pegas afuera.</p>
       <div class="row-3" style="margin-bottom:1.2rem">
-        <article class="stat">Ingresos <b id="sum-in">—</b></article>
-        <article class="stat">Gastos <b id="sum-out">—</b></article>
+        <article class="stat">Entra <b id="sum-in">—</b></article>
+        <article class="stat">Sale <b id="sum-out">—</b></article>
         <article class="stat">Neto <b id="sum-net">—</b></article>
       </div>
-      <h3>Ingresos del mes</h3>
       <div id="ingresos"></div>
-      <button class="btn small ghost" type="button" id="add-ingreso" style="margin:0.6rem 0 1.4rem">+ Ingreso</button>
-      <h3>Gastos del mes</h3>
+      <button class="btn small ghost" type="button" id="add-ingreso" style="margin:0.6rem 0 1.4rem">+ Entrada</button>
       <div id="gastos"></div>
-      <button class="btn small ghost" type="button" id="add-gasto" style="margin:0.6rem 0 1.4rem">+ Gasto</button>
-      <label for="bitacora">Bitácora de sesión (qué te dijo la IA y qué falló)</label>
-      <textarea id="bitacora" placeholder="Fecha, modelo, qué No-Prompt usaste, qué alucinó, qué verificaste."></textarea>
-    </section>
-
-    <section class="view" id="view-probe">
-      <p class="kicker">Glifo 3.2 · KNOWN_PROBE</p>
-      <h2>Calibración contra lo ya vivido</h2>
-      <p>Llena “Yo ya lo sé” con números de tu mes pasado. Luego pega NP-03 en el modelo, copia lo que te responda en “La IA dijo” y mira la línea base de Certeza sin Sustancia.</p>
-      <div class="row-2" style="margin:1rem 0">
-        <article class="stat">Acierto <b id="probe-score">—</b></article>
-        <article class="stat">Fallo <b id="probe-fail">—</b></article>
-      </div>
-      <div class="meter"><span id="probe-meter" style="width:0"></span></div>
-      <p id="probe-flag" class="lede"></p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Pregunta</th><th>Yo ya lo sé</th><th>La IA dijo</th></tr></thead>
-          <tbody id="probe-rows"></tbody>
-        </table>
-      </div>
+      <button class="btn small ghost" type="button" id="add-gasto" style="margin:0.6rem 0 1.4rem">+ Salida</button>
+      <label for="bitacora">Bitácora (palabra, modelo, qué hizo cada uno)</label>
+      <textarea id="bitacora" placeholder="El ejemplo de la exigencia 4 tiene que ser tuyo. Nadie más tiene esa palabra ni esa bitácora."></textarea>
     </section>
 
     <section class="view" id="view-prompts">
-      <p class="kicker">Capas 1–4 · lenguaje de negocio</p>
-      <h2>Los 8 No-Prompts</h2>
-      <p>Se rellenan solos con tu Yoliztli. Cópialos en orden. No son hechizos. Son intervenciones sobre la gramática del modelo.</p>
+      <p class="kicker">Banco · no lista de tareas</p>
+      <h2>Las dieciséis exigencias</h2>
+      <p>Cada una trae dos cosas que ningún paquete de prompts puede traer: qué debe contener una respuesta aceptable y cómo se ve cuando la máquina te esquivó.</p>
+      <div class="cta-row" style="margin:1rem 0">
+        <button class="btn small ghost" type="button" data-filtro="todas">Todas</button>
+        <button class="btn small ghost" type="button" data-filtro="2min">2 minutos</button>
+        <button class="btn small ghost" type="button" data-filtro="10min">10 minutos</button>
+        <button class="btn small ghost" type="button" data-filtro="duele">Duele</button>
+        <button class="btn small ghost" type="button" data-filtro="A">A</button>
+        <button class="btn small ghost" type="button" data-filtro="B">B</button>
+        <button class="btn small ghost" type="button" data-filtro="C">C</button>
+        <button class="btn small ghost" type="button" data-filtro="D">D</button>
+      </div>
       <div id="prompts-list"></div>
     </section>
 
+    <section class="view" id="view-probe">
+      <p class="kicker">Exigencia 10 · KNOWN_PROBE · la central</p>
+      <h2>El calibrador</h2>
+      <p>No le preguntes «del 1 al 100, qué tan seguro estás». Ese número lo escribe la misma máquina que escribió la respuesta. El error contra un periodo que ya pasó sí se comprueba.</p>
+      <label for="pr-periodoPasado">Periodo que ya pasó (datos que le das)</label>
+      <input id="pr-periodoPasado" placeholder="enero–marzo 2026">
+      <label for="pr-periodoSiguiente">Periodo siguiente (tú ya sabes qué pasó; no se lo digas todavía)</label>
+      <input id="pr-periodoSiguiente" placeholder="abril 2026">
+      <label for="pr-prediccion">Paso 1 · lo que predijo</label>
+      <input id="pr-prediccion">
+      <label for="pr-conocido">Paso 2 · lo que pasó de verdad</label>
+      <input id="pr-conocido">
+      <label for="pr-errorPct">Porcentaje de error que declaró</label>
+      <input id="pr-errorPct" placeholder="Esa cifra es tu línea base de esta sesión">
+      <label for="pr-periodoNuevo">Paso 3 · periodo que viene</label>
+      <input id="pr-periodoNuevo" placeholder="que te dé rango bajo / medio / alto, no una cifra">
+      <p style="margin-top:1rem">Regla de la sesión: el error del paso 2 es tu línea base. Si en el paso 3 te habla con más seguridad de la que ese error justifica, la seguridad es del formato.</p>
+    </section>
+
     <section class="view" id="view-checklist">
-      <p class="kicker">Capa 3 · Guía de evaluación</p>
-      <h2>Diez preguntas contra el halago</h2>
-      <p>Audita la respuesta. Si no llega a 8/10, no ejecutes. El checklist es el canal de certeza que el Transformer no tiene.</p>
-      <article class="stat" style="margin:1rem 0">Puntaje <b id="check-score">0 / 10</b></article>
+      <p class="kicker">Al terminar</p>
+      <h2>Las ocho preguntas de salida</h2>
+      <p>Cuatro sobre la respuesta. Cuatro sobre ti. Las segundas son las que ningún otro material te va a pedir, y son las que impiden que este método se convierta en otra receta que sigues sin pensar.</p>
+      <article class="stat" style="margin:1rem 0">Marcas <b id="check-score">0 / 8</b></article>
       <div class="meter"><span id="check-meter" style="width:0"></span></div>
       <p id="check-verdict"></p>
       <div id="check-list"></div>
     </section>
 
+    <section class="view" id="view-hoja">
+      <p class="kicker">Para imprimir y pegar junto a la pantalla</p>
+      <h2>Las dieciséis, en una hoja</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Exigencia</th><th>La señal de que te esquivó</th></tr></thead>
+          <tbody id="hoja-tabla"></tbody>
+        </table>
+      </div>
+      <blockquote class="quote" style="margin-top:1.6rem">Antes de creerle: pídele que prediga algo que tú ya sabes (10) y pídele su punto más flojo (12).</blockquote>
+    </section>
+
     <section class="view" id="view-isd">
-      <p class="kicker">Índice de Soberanía de Decisión</p>
+      <p class="kicker">Del paper, no del manual v0.9</p>
       <h2>ISD = C1×0.35 + C2×0.30 + C3×0.20 + C4×0.15</h2>
-      <p>Métrica de Méndez Valdez. No mide “qué tan buena es la IA”. Mide qué tanto del procesamiento y de la verificación sigue siendo tuyo. C4 es IVAES: verificabilidad de outputs de alta especificidad (hashes, fechas, versiones, citas).</p>
+      <p>Índice de Soberanía de Decisión. Extra opcional. El manual se sostiene sin esto.</p>
       <article class="stat" style="margin:1rem 0">ISD <b id="isd-total">0</b></article>
       <div class="meter"><span id="isd-meter" style="width:0"></span></div>
-      <p id="isd-note"></p>
-      <label>C1 · Localidad de datos y procesamiento <span id="c1-val"></span></label>
+      <label>C1 localidad <span id="c1-val"></span></label>
       <input id="c1" type="range" min="0" max="100">
-      <label>C2 · Calibración (KNOWN_PROBE de esta sesión) <span id="c2-val"></span></label>
+      <label>C2 calibración <span id="c2-val"></span></label>
       <input id="c2" type="range" min="0" max="100">
-      <label>C3 · Independencia de la recomendación (¿puedes actuar sin el modelo?) <span id="c3-val"></span></label>
+      <label>C3 independencia <span id="c3-val"></span></label>
       <input id="c3" type="range" min="0" max="100">
-      <label>C4 · IVAES (datos exactos anclados a fuente, no generados) <span id="c4-val"></span></label>
+      <label>C4 IVAES <span id="c4-val"></span></label>
       <input id="c4" type="range" min="0" max="100">
     </section>
-
-    <section class="view" id="view-glifos">
-      <p class="kicker">Atlas</p>
-      <h2>Dieciséis operaciones</h2>
-      <p>Modularidad: cada capa sola corrige. La calibración completa pide las cuatro. Independiente del modelo. Costo computacional extra para ti: cero.</p>
-      <div class="grid-2" style="margin-top:1rem" id="atlas"></div>
-    </section>
   </main>
-
   <script src="../js/app.js"></script>
   <script>
-    document.getElementById("atlas").innerHTML = [
-      ["1.1 CONTEXT_DECLARE", "Declara identidad situacional. No es personalización: es corrección de variable."],
-      ["1.2 CONSTRAINT_SET", "Techo real de tiempo, dinero, acceso, infraestructura. Elimina respuestas genéricas."],
-      ["1.3 LOCALE_INJECT", "Entorno económico, geográfico, cultural. Data que cambia el output."],
-      ["1.4 REGISTER_VERIFY", "Vocabulario situado. Si el modelo corrige, marcaste el borde de su corpus."],
-      ["2.1 FORK_LOGIC", "Otra lógica, no otra opción. Rompe la convergencia a máxima verosimilitud."],
-      ["2.2 COUNTER_GENERATE", "La mejor argumentación contra su propia respuesta. Elocuencia ≠ certeza."],
-      ["2.3 COST_EXPOSE", "Trade-offs explícitos. Los costos se omiten porque bajan la verosimilitud percibida."],
-      ["2.4 TENSION_HOLD", "Eficiente y correcta a la vez, sin reconciliar. La tensión es información."],
-      ["3.1 SOURCE_DEMAND", "Fuente primaria o dato no verificado."],
-      ["3.2 KNOWN_PROBE", "Calibrar el instrumento contra el Yoliztli. La operación más importante."],
-      ["3.3 CROSS_MODEL", "Misma query a dos modelos. Divergencia con la misma certeza = formato, no evidencia."],
-      ["3.4 CONFIDENCE_INVERT", "Que declare sus puntos de menor confianza."],
-      ["4.1 CRITERIA_EXTRACT", "¿Qué criterios evalúo? No: ¿qué hago?"],
-      ["4.2 QUESTION_GENERATE", "Preguntas para ti, no respuestas para memorizar."],
-      ["4.3 STRUCTURE_EXTRACT", "Andamio vacío. El material lo pones tú."],
-      ["4.4 EXIT_PROTOCOL", "Señales observables en tu realidad, independientes del modelo."]
-    ].map(([k,v]) => `<article class="glyph"><code>${k}</code><p>${v}</p></article>`).join("");
-
     document.querySelectorAll("[data-view-jump]").forEach((b) => {
       b.addEventListener("click", () => {
         document.querySelector(`.navbtn[data-view="${b.dataset.viewJump}"]`).click();

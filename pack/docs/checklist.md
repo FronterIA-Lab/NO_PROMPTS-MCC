@@ -1,37 +1,40 @@
-# Guía de evaluación — 10 preguntas contra el halago
+# Ocho preguntas de salida
 
-Capa 3 del MCC. El Transformer no tiene un canal separado de confianza. Este checklist lo construye del lado del usuario.
+Del manual NO.PROMPTS v0.9. Cuatro sobre la respuesta. Cuatro sobre ti.
 
-Marca sí/no **después** de recibir la respuesta. No mientras el modelo te cae bien.
+## Sobre la respuesta
 
-| # | Pregunta | Sí |
+1. ¿Marcó en algún lugar qué es lo que no sabe?
+2. ¿Me dio más de una lógica, o una sola con dos nombres?
+3. ¿Los criterios traen números, o traen adjetivos?
+4. ¿Puedo evaluar si esto funcionó sin volver a preguntarle?
+
+## Sobre ti
+
+5. ¿Qué dejé fuera al describir mi situación? ¿A quién no nombré?
+6. La contradicción que le exigí, ¿es la de verdad, o me está tapando una más incómoda?
+7. ¿Estoy usando esto para pensar, o para que alguien más piense por mí?
+8. Lo que aprendí aquí, ¿lo puedo usar sin la máquina?
+
+Si la 7 y la 8 salen mal: cierra el chat y vuelve mañana. No es una falla del método: es el método avisándote. La dependencia se instala despacio y siempre se siente como eficiencia.
+
+## Las dieciséis, señal de que te esquivó
+
+| # | Exigencia | Señal |
 | --- | --- | --- |
-| 01 | ¿Te reconstruyó tu situación en tres frases verificables **antes** de recomendar? | |
-| 02 | ¿Declaró restricciones de tiempo, dinero, cuidado e infraestructura, o las ignoró? | |
-| 03 | ¿Pidió o usó cifras de tu plantilla, o inventó promedios del Norte Global? | |
-| 04 | ¿Te dio más de una **lógica** (no dos sabores de la misma solución)? | |
-| 05 | ¿Exhibió costos ocultos, comisiones, tiempo y riesgos, no solo beneficios? | |
-| 06 | ¿Sostuvo la tensión ética vs. eficiente **sin** reconciliarla con un discurso suave? | |
-| 07 | ¿Citó fuentes primarias (SAT, CONDUSEF, contrato, estado de cuenta) o solo blogs? | |
-| 08 | ¿Marcó qué no sabe, o recubrió los huecos con certeza sin sustancia? | |
-| 09 | ¿Te entregó criterios y preguntas, o un plan cerrado para memorizar? | |
-| 10 | ¿Te dio señales de salida observables en tu realidad, independientes del modelo? | |
-
-## Lectura del puntaje
-
-- **8–10.** Respuesta usable. Aún así: tú decides.
-- **5–7.** Incompleta. Falta una capa. No ejecutes tal cual.
-- **0–4.** Halago con formato de consejo. Descártala o rehaz con otro No-Prompt.
-
-Si el modelo falló KNOWN_PROBE (más de ~20 % de error en hechos que tú ya conocías), **toda** la sesión es NO CALIBRADA, aunque este checklist salga bonito. La elocuencia no lava la calibración.
-
-## ISD rápido (opcional)
-
-ISD = C1×0.35 + C2×0.30 + C3×0.20 + C4×0.15
-
-- C1 localidad de datos
-- C2 calibración de la sesión
-- C3 independencia (¿puedes actuar sin el modelo?)
-- C4 IVAES (datos exactos anclados a fuente)
-
-Un ISD alto de infraestructura local no perdona un hash inventado. La soberanía del procesamiento no es verificabilidad del output.
+| 1 | Quién soy | Repite tus datos y contesta igual que sin ellos |
+| 2 | Mi techo real | Te propone algo que ya le dijiste que no puedes pagar |
+| 3 | Dónde vivo | Dice «adaptado a México» sin señalar qué cambió |
+| 4 | La palabra que no conoce | Te la corrige por otra parecida |
+| 5 | Dos lógicas | La misma ruta con distinto adjetivo |
+| 6 | Abogado del diablo | «Todo depende de tu contexto» |
+| 7 | Costo oculto | «tiempo», «curva de aprendizaje» |
+| 8 | Tensión | Te inventa una tercera opción equilibrada |
+| 9 | Fuente o nada | Ningún dato viene marcado como «sin fuente» |
+| 10 | El calibrador | Se salta el error contra el periodo que ya pasó |
+| 11 | El careo | Te quedaste con la respuesta que más te gustó |
+| 12 | El punto débil | Dice que todo está bien fundamentado |
+| 13 | El marco | Adjetivos en vez de números |
+| 14 | Preguntas | Diez del mismo peso |
+| 15 | Andamio vacío | El documento ya escrito con datos inventados |
+| 16 | La salida | «Monitorea tus resultados y ajusta según sea necesario» |

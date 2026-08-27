@@ -1,34 +1,39 @@
 # NO_PROMPTS-MCC
 
-**Pack de No-Prompts MCC + Plantilla Yoliztli**  
-FronterIA-Lab [Indioyori] · $37 USD / $690 MXN · CC BY-NC-SA 4.0
+**NO.PROMPTS** · FronterIA-Lab · Sonora · $37 USD / $690 MXN · CC BY-NC-SA 4.0
 
-El mercado está saturado de *“500 prompts para ChatGPT”*. Esos packs entrenan la servidumbre: le pides a un Transformer que te dé *la* respuesta, y te la da con certeza sin sustancia. Este repositorio empaqueta lo contrario.
+Manual v0.9 de Dolores Méndez Valdez, más una herramienta local para no entregar el dato en crudo.
 
-> Esos son basura. La IA miente con seguridad. Aquí está el método para que te dé respuestas útiles en lugar de halagos. Y de paso, la plantilla para que los datos sean tuyos, no de la nube.
+> Un prompt le pide a la máquina que adivine mejor. Una exigencia la obliga a mostrar de dónde salió el número.
 
-- Abrir la **landing**: [`index.html`](index.html)
-- Abrir la **herramienta local** (el producto): [`pack/abrir-aqui.html`](pack/abrir-aqui.html)
-- Atlas de 16 glifos: [`protocolo/atlas.md`](protocolo/atlas.md)
+- Landing: [`index.html`](index.html)
+- Herramienta: [`pack/abrir-aqui.html`](pack/abrir-aqui.html)
+- PDF original: [`corpus/catalog/NO-PROMPTS-manual-v0.9.pdf`](corpus/catalog/NO-PROMPTS-manual-v0.9.pdf)
 
-No necesita cuenta, build ni internet. Los números de la plantilla viven en `localStorage`.
+No necesita cuenta, build ni internet. Yoliztli vive en `localStorage`. Las cifras pueden ir veladas (proporciones, base 100, factor propio).
 
-## Qué es el producto
+## El producto
 
-Tres piezas, una sola lógica: anclar el modelo a la realidad material **antes** de dejarlo hablar de dinero.
+Son **16 exigencias**, no 8 prompts inventados. Banco, no lista. Cada una trae respuesta aceptable y señal de fallo.
 
-| Pieza | Archivo | Capa MCC |
+| Pieza | Dónde | Del v0.9 |
 | --- | --- | --- |
-| Plantilla Yoliztli | `pack/abrir-aqui.html` + `pack/plantillas/yoliztli.csv` | Capa 1 + glifo 3.2 KNOWN_PROBE |
-| Manual de 8 No-Prompts | `pack/docs/manual-no-prompts.md` | Capas 2–4, lenguaje de negocio |
-| Guía de evaluación | `pack/docs/checklist.md` | Capa 3: el canal de certeza que el modelo no tiene |
+| Tres líneas de Yoliztli | `pack/abrir-aqui.html` | Antes de empezar |
+| 16 exigencias con filtros 2 min / 10 min / duele | la misma herramienta | Movimientos A–D |
+| 8 preguntas de salida + hoja para pegar | `pack/docs/checklist.md` | Al terminar |
+| PDF de producción | `pack/docs/NO-PROMPTS-manual-v0.9.pdf` | el original |
 
-Los 8 No-Prompts no son hechizos. Son glifos traducidos:
+Mínimo que funciona: movimiento A (1–4) + exigencia 10. Si sólo te acuerdas de una cosa: la 10 y la 12.
 
-1. Yoliztli Declare · 2. Locale Inject · 3. Known Probe · 4. Fork Logic  
-5. Cost Expose · 6. Tension Hold · 7. Source or Silence · 8. Framework Exit
+## Precio y canal
 
-Secuencia ritual: **Capa 1 → Glifo 3.2 → Capa 2 → Capa 3 → Capa 4**.
+**$37 USD / $690 MXN**, pago único. Directo + taller. No Udemy ni marketplaces de prompts.
+
+```bash
+python3 -m http.server 8765
+bash scripts/empaquetar.sh
+```
+
 
 ## Decisiones de entrega, precio y canal
 

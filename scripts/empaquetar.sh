@@ -9,6 +9,7 @@ cp "$ROOT/js/app.js" "$OUT/js/"
 cp "$ROOT/favicon.ico" "$OUT/"
 cp "$ROOT/pack/LEEME.txt" "$OUT/"
 cp "$ROOT/pack/docs/"*.md "$OUT/docs/"
+cp "$ROOT/pack/docs/"*.pdf "$OUT/docs/" 2>/dev/null || true
 cp "$ROOT/pack/plantillas/"*.csv "$OUT/plantillas/"
 # rewrite parent-relative paths to local pack paths
 sed -e 's|href="../css/mcc.css"|href="css/mcc.css"|' \

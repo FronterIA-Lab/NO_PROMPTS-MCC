@@ -1,184 +1,166 @@
-# Manual de 8 No-Prompts MCC
+# NO.PROMPTS — Manual v0.9
 
-**Pack No-Prompts MCC + Plantilla de Control**  
-FronterIA-Lab [Indioyori] · Dolores Méndez Valdez  
-Licencia: CC BY-NC-SA 4.0
+FronterIA-Lab · Sonora  
+Método: Calibración Contextual (MCC)  
+Autora: Dolores Méndez Valdez  
+Versión: 0.9 · borrador de producción
 
-Esto **no** es un pack de prompts. El mercado vende halagos con formato de productividad. Aquí hay ocho intervenciones sobre la gramática de un modelo Transformer. Cada No-Prompt corresponde a glifos del Método de Calibración Contextual.
+PDF de diseño: `NO-PROMPTS-manual-v0.9.pdf` (esta carpeta y `corpus/catalog/`).
 
-Secuencia ritual (no negociable):
+No son 500 prompts. Son 16 exigencias — y una manera de saber si funcionaron.
 
-1. Capa 1 — declaración de contexto (NP-01, NP-02)
-2. Glifo 3.2 — calibración KNOWN_PROBE (NP-03)
-3. Capa 2 — bifurcación (NP-04, NP-05, NP-06)
-4. Capa 3 — certeza (NP-07)
-5. Capa 4 — marco y salida (NP-08)
+Un prompt le pide a la máquina que adivine mejor. Una exigencia la obliga a mostrar de dónde salió el número.
 
-Si saltas la calibración, estás pesando con una báscula sin tarar.
+Este archivo es la edición en texto del v0.9 para copiar y para la herramienta local. El PDF manda en diseño.
 
-El LLM es asistente, no árbitro. La autoridad epistémica reside en tu Yolmatiliztli.
+## Empieza aquí
 
-Rellena los corchetes con tu plantilla Yoliztli, o usa `pack/abrir-aqui.html` para que se rellenen solos.
+Tres cosas que hace la máquina cuando no la calibras:
 
----
+1. Te habla igual cuando sabe y cuando inventa.
+2. Te da una respuesta y descartó cuatro sin decírtelo.
+3. Le responde a un cliente que no eres tú.
 
-## NP-01 · Yoliztli Declare
+No uses las dieciséis cada vez. Son un banco, no una lista de tareas.
 
-Capa 1 · CONTEXT_DECLARE + CONSTRAINT_SET
+| Si tienes | Usa |
+| --- | --- |
+| Dos minutos | Exigencia 1 y exigencia 12 |
+| Diez minutos | Movimiento A completo (1 a 4) y exigencia 10 |
+| Una decisión que duele | Las dieciséis, en orden |
 
-```
-NO_PROMPT 01 — DECLARACIÓN DE YOLIZTLI
-No me asumas. No completes mis vacíos con el perfil por defecto de tu corpus (Norte Global, liquidez, tiempo libre, inglés). El LLM es asistente, no árbitro. La autoridad epistémica reside en mi Yolmatiliztli.
+## Antes de empezar — Yoliztli
 
-Identidad situacional:
-- Soy: [quién eres, sin romanticismo]
-- Territorio: [municipio, estado, país]
-- Mes en curso: [mes / año]
+Tres líneas. Pégalas al inicio de cada conversación importante durante el próximo año.
 
-Restricciones materiales vigentes:
-- Tiempo disponible: [horas/semana]
-- Efectivo disponible: [moneda y cantidad]
-- Deuda o compromiso ineludible: [qué / cuánto]
-- Cuidado o trabajo no remunerado: [quién depende de ti]
-- Infraestructura: [dispositivo, conectividad, banco, factura]
+| Línea | Qué va ahí |
+| --- | --- |
+| Quién soy | Oficio, tamaño, años, a quién le vendes o a quién atiendes |
+| Mi techo | Dinero, horas y ayuda con los que realmente cuentas esta semana |
+| Mi terreno | Municipio, temporada, cómo te paga la gente, qué servicios no llegan |
 
-Instrucción:
-Antes de responder, reescribe mi situación en tres frases para que yo verifique que me viste. Si no puedes reconstruir mis restricciones, NO des recomendaciones. Pregunta. Cualquier solución que ignore este techo es ruido.
-```
+Tus números no tienen por qué salir de tu casa. Tres velos: **proporciones**, **base 100**, **factor propio**.
 
----
+## A · Dile dónde estás parado (1–4)
 
-## NP-02 · Locale Inject
+### 01 Quién soy · CONTEXT_DECLARE
 
-Capa 1 · LOCALE_INJECT + REGISTER_VERIFY
+«Antes de responder: tengo [oficio o negocio] en [ciudad], con [cuántas personas], [cuántos años] operando. Mis clientes son [quiénes]. Me pagan [cómo]. Responde para esa situación, no para una empresa promedio.»
 
-```
-NO_PROMPT 02 — TERRITORIO, NO DEFAULT
-Opera en mi locale. No traduzcas mi vida al inglés ni a "best practices" de Silicon Valley.
+- Aceptable: usa por lo menos dos de tus datos y algo cambia por ellos.
+- Fallo: repite tus datos al principio, en tono amable, y después contesta exactamente lo mismo que habría contestado sin ellos.
 
-- Moneda: [MXN u otra]
-- Fiscalidad: [Régimen SAT / informal / cooperativa / otro]
-- Banca y circuito: [SPEI, OXXO, efectivo, tandas, cooperativa]
-- Territorio: [región]
-- Vocabulario situado (no lo corrijas): [palabras de tu pueblo, oficio o casa]
+### 02 Mi techo real · CONSTRAINT_SET
 
-Si no reconoces un término, márcalo como FUERA DE DISTRIBUCIÓN. No lo normalices. Esa frontera es dato: indica dónde tu corpus no tiene jurisdicción sobre mi realidad.
-No recomiendes productos, APIs o bancos que no operen en mi circuito material.
-```
+«Mi techo real: dispongo de [cuánto dinero] y [cuántas horas a la semana]. No tengo [contador / empleados / crédito / internet estable]. Todo lo que pase de ese techo, deséchalo tú antes de dármelo, y dime qué desechaste y por qué.»
 
----
+- Aceptable: lista corta de lo que descartó.
+- Fallo: «Podrías considerar contratar a alguien» después de que le dijiste que no tienes para pagar a nadie.
 
-## NP-03 · Known Probe
+### 03 Dónde vivo · LOCALE_INJECT
 
-Capa 3 · Glifo 3.2 — la operación más importante del protocolo.
+«Estoy en [municipio, estado]. Aquí [la gente paga en efectivo / hay temporada de X / el trámite lo lleva Y / no llega el servicio Z]. Marca cada parte de tu respuesta que dé por hecho otro país, otra moneda u otro sistema, y corrígela. Si no sabes cómo es aquí, dilo en vez de suponer.»
 
-```
-NO_PROMPT 03 — CALIBRACIÓN CONTRA LO YA VIVIDO
-Antes de analizar mis finanzas, responde SOLO con números o hechos a preguntas cuya respuesta YO YA CONOZCO (pestaña KNOWN_PROBE de mi plantilla Yoliztli). No busques. No redondees. No inventes. Si no lo sabes, escribe NO LO SÉ.
+- Aceptable: supuestos corregidos o declarados como desconocidos.
+- Fallo: dice «adaptado a México» y no señala una sola cosa que haya cambiado.
 
-1. ¿Cuánto te entró el mes pasado (total)?
-2. ¿Cuál fue tu gasto más grande y de cuánto?
-3. ¿Cuánto pagaste de luz / internet / renta?
-4. ¿Cuántas personas dependen de tu ingreso?
-5. ¿Cuál es tu techo de efectivo disponible esta semana?
+### 04 La palabra que no conoce · REGISTER_VERIFY
 
-Después compararé tus respuestas con mi plantilla. El porcentaje de error es tu línea base de Certeza sin Sustancia para esta sesión. Si fallas, todas tus recomendaciones posteriores se marcan NO CALIBRADAS y no las ejecutaré.
-```
+«Voy a usar la palabra [una palabra de tu oficio, de tu región o de tu lengua]. Antes de seguir: dime qué entiendes por ella. Si no la reconoces, dímelo.»
 
----
+- Aceptable: reconoce que no la conoce, o la define de un modo que tú puedes verificar.
+- Fallo: te la corrige, la traduce sin avisar, o inventa una definición con seguridad.
 
-## NP-04 · Fork Logic
+El ejemplo de esta exigencia tiene que ser tuyo.
 
-Capa 2 · FORK_LOGIC + COUNTER_GENERATE
+## B · Rómpele la respuesta única (5–8)
 
-```
-NO_PROMPT 04 — OTRA LÓGICA, NO OTRA OPCIÓN
-Sobre mi situación (la declarada en NP-01):
+### 05 Dos lógicas, no dos opciones · FORK_LOGIC
 
-1. Dame DOS respuestas que operen con lógicas diferentes, no con variaciones de la misma lógica. Ejemplo de contraste válido: lógica de eficiencia de caja vs. lógica de cuidado y territorio. No me des "plan A agresivo / plan A suave".
-2. Después genera la mejor argumentación CONTRA tu respuesta más elocuente. Si el contraargumento es igual de fuerte, tu respuesta original no contenía certeza: contenía elocuencia.
-3. Declara qué descartaste al converger y por qué no me lo ibas a decir.
-```
+«No me des una sola salida. Dame dos que funcionen con lógicas distintas: una pensada para crecer y otra pensada para aguantar. Que se contradigan en al menos una acción concreta. No las combines ni me digas cuál prefieres.»
 
----
+- Fallo: la misma ruta con distinto adjetivo.
 
-## NP-05 · Cost Expose
+### 06 El abogado del diablo · COUNTER_GENERATE
 
-Capa 2 · COST_EXPOSE
+«Ahora arma el mejor argumento en contra de tu propia recomendación. No un “depende”: el escenario concreto en que hacerte caso me hace perder dinero, qué tendría que pasar para que ocurra, y cómo lo veo venir antes.»
 
-```
-NO_PROMPT 05 — LOS COSTOS SON EL DATO
-Cualquier recomendación financiera o de herramientas debe declarar, en tabla:
+- Fallo: «Todo depende de tu contexto.»
 
-- Costo en [moneda] (comisiones, intereses, mensualidades, "gratis" que se paga con datos)
-- Costo en tiempo (horas mías, no del modelo)
-- Costo en infraestructura (mi dispositivo y conectividad reales)
-- Costo en soberanía (¿mis datos salen? ¿puedo exportar? ¿quién es el árbitro si falla?)
-- Qué se rompe si mi mes sale peor de lo que asumes
+### 07 El costo oculto · COST_EXPOSE
 
-Si no puedes llenar una fila, escríbela como DESCONOCIDO. No la suavices. No reconcilies. Los costos omitidos son violencia epistémica cuando quien paga soy yo.
-```
+«Dame tres costos de esto que no me hayas mencionado. De cada uno: quién lo cobra, en qué momento aparece, y cómo lo compruebo yo sin preguntarte.»
 
----
+- Fallo: costos que no son costos: «tiempo», «curva de aprendizaje».
 
-## NP-06 · Tension Hold
+### 08 La tensión sin resolver · TENSION_HOLD
 
-Capa 2 · TENSION_HOLD
+«Dame la opción más rentable y la opción más justa. De cada una: quién gana y quién paga, con nombre. No las juntes, no me recomiendes una, no busques el punto medio. Quiero ver la tensión.»
 
-```
-NO_PROMPT 06 — SOSTÉN LA TENSIÓN
-Presenta simultáneamente:
-A) la opción más eficiente según tu gramática de optimización
-B) la opción que respete el protocolo ético de mi comunidad y mis restricciones de cuidado
+- Fallo: te inventa una tercera opción «equilibrada».
 
-No las reconcilies. No me des un "equilibrio" ni un "punto medio". La tensión entre ambas es información. La reconciliación es pérdida de información.
+## C · El juez eres tú (9–12)
 
-Yo decido. Tú no. Si sientes la urgencia de cerrar la contradicción, esa urgencia es el modelo, no mi vida.
-```
+### 09 La fuente o nada · SOURCE_DEMAND
 
----
+«Cada dato duro que uses: dime de dónde sale y de qué año. Si no puedes darme la fuente, escribe al lado “sin fuente” y sigue.»
 
-## NP-07 · Source or Silence
+- Fallo: «estudios recientes», «los expertos coinciden».
 
-Capa 3 · SOURCE_DEMAND + CONFIDENCE_INVERT
+### 10 El calibrador · KNOWN_PROBE · la exigencia central
 
-```
-NO_PROMPT 07 — FUENTE O SILENCIO
-Para cada afirmación factual (tasas, plazos, requisitos SAT, rendimientos, hashes, fechas, versiones, "según expertos"):
+Paso 1. «Te doy los datos de [un periodo que ya pasó]. Con eso, dime qué pasó en [el periodo siguiente].» — Tú ya sabes qué pasó. No se lo digas todavía.
 
-- Exige fuente primaria: ley, DOF, SAT, CONDUSEF, contrato, estado de cuenta, paper con página.
-- Si no puedes proveerla, o solo tienes blogs y listicles, marca el dato NO VERIFICADO.
-- Declara tus puntos de MENOR confianza dentro de tu propia respuesta (CONFIDENCE_INVERT).
-- Prohibido inventar identificadores técnicos, cifras exactas o citas. Prefiero un NO LO SÉ a una certeza sin sustancia. El costo de tu elocuencia lo pago yo en tiempo no recuperable.
-```
+Paso 2. «Esto fue lo que pasó de verdad. Dime en qué porcentaje te equivocaste y en qué exactamente.»
 
----
+Paso 3. «Ahora sí: proyecta [el periodo que viene]. Dame tres números —bajo, medio y alto—, la lista de supuestos, y el único dato que más reduciría tu incertidumbre.»
 
-## NP-08 · Framework Exit
+No le preguntes del 1 al 100 qué tan seguro está. Ese número lo escribe la misma máquina.
 
-Capa 4 · CRITERIA_EXTRACT + STRUCTURE_EXTRACT + EXIT_PROTOCOL
+### 11 El careo · CROSS_MODEL
 
-```
-NO_PROMPT 08 — NO ME DES EL PLAN. DAME EL MARCO.
-Sustituye "qué hago" por:
+Copia tu pregunta, palabra por palabra, y pégala en una segunda máquina de otra empresa. No le cuentes a ninguna lo que dijo la otra. Si divergen y las dos suenan igual de seguras, la seguridad no viene de la evidencia.
 
-1. CRITERIOS que yo debería evaluar con mi Yoliztli.
-2. PREGUNTAS que yo debería hacerme, no respuestas para memorizar.
-3. ESTRUCTURA vacía para que yo la llene con mis números. Tú el andamio; yo el material.
-4. EXIT_PROTOCOL: señales observables en mi realidad —independientes de ti— que indicarían si la decisión funciona o no a 7, 30 y 90 días.
+Fallo tuyo: quedarte con la respuesta que más te gustó.
 
-Entra a esta sesión con una pregunta. Salgo con capacidad de evaluar. Si me das un plan cerrado, has violado la Capa 4.
-```
+### 12 El punto débil · CONFIDENCE_INVERT
 
----
+«De todo lo que acabas de decirme, señálame las dos partes en las que estás más flojo y por qué. No me des un porcentaje: dime qué parte y qué le falta.»
 
-## Cómo usarlo en 20 minutos
+Si sólo vas a usar una, usa esta.
 
-1. Abre `abrir-aqui.html` (sin internet).
-2. Llena Yoliztli con números del mes pasado, no con deseos.
-3. Copia NP-01 y NP-02. Verifica que el modelo te haya visto.
-4. Copia NP-03. Anota sus respuestas en Known Probe. Si el fallo es alto: para.
-5. Sigue con NP-04 a NP-08 según lo que necesites.
-6. Pasa el checklist de 10 preguntas. Menos de 8/10: no ejecutes.
+## D · Sal con criterio, no con respuesta (13–16)
 
-Independencia de modelo: ChatGPT, Claude, Grok, DeepSeek, Qwen, Llama local. El protocolo opera sobre la capa de interacción.
+### 13 El marco · CRITERIA_EXTRACT
+
+«No me digas qué hacer. Dime qué tengo que mirar para decidirlo yo. Cada criterio con un número.»
+
+- Fallo: adjetivos en vez de umbrales (razonable, adecuado).
+
+### 14 Las preguntas correctas · QUESTION_GENERATE
+
+«No me des respuestas. Dame las diez preguntas que yo debería hacerme antes de decidir esto, ordenadas por cuánto cambia mi decisión la respuesta. Marca las tres que puedo contestar hoy con lo que ya sé.»
+
+### 15 El andamio vacío · STRUCTURE_EXTRACT
+
+«Dame la estructura sin el contenido. […] No los llenes tú, ni con ejemplos.»
+
+- Fallo: el documento ya escrito, con datos plausibles. Es lo más peligroso del manual.
+
+### 16 La salida · EXIT_PROTOCOL
+
+«Dame tres señales que yo pueda ver en mi negocio —cada una con número y con fecha— […] Y dime bajo qué condición debo abandonarlo.»
+
+- Fallo: «Monitorea tus resultados y ajusta según sea necesario.»
+
+## Al terminar — ocho preguntas
+
+Sobre la respuesta: 1) ¿marcó lo que no sabe? 2) ¿más de una lógica? 3) ¿criterios con números? 4) ¿puedo evaluar sin volver a preguntarle?
+
+Sobre ti: 5) ¿qué dejé fuera? 6) ¿la contradicción es la de verdad? 7) ¿estoy usando esto para pensar, o para que alguien más piense por mí? 8) ¿lo puedo usar sin la máquina?
+
+Si la 7 y la 8 salen mal: cierra el chat y vuelve mañana.
+
+## Si sólo te acuerdas de una cosa
+
+Antes de creerle: pídele que prediga algo que tú ya sabes (10) y pídele su punto más flojo (12).
