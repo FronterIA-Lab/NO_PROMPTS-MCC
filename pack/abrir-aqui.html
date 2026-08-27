@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pack No-Prompts MCC · Yoliztli</title>
+  <meta name="description" content="Herramienta local del Pack No-Prompts MCC. Tus datos no salen de este navegador.">
+  <link rel="stylesheet" href="../css/mcc.css">
+</head>
+<body class="app-body">
+  <div class="noise" aria-hidden="true"></div>
+  <aside class="sidenav">
+    <a class="brand" href="../index.html" style="margin:0.2rem 0.4rem 1rem">
+      <svg class="mark" viewBox="0 0 28 28" aria-hidden="true">
+        <rect x="12" y="2" width="4" height="4" fill="#5ffbf1"/>
+        <rect x="2" y="12" width="4" height="4" fill="#ff3dac"/>
+        <rect x="12" y="12" width="4" height="4" fill="#d4a84b"/>
+        <rect x="22" y="12" width="4" height="4" fill="#ff3dac"/>
+        <rect x="12" y="22" width="4" height="4" fill="#5ffbf1"/>
+      </svg>
+      MCC
+    </a>
+    <button class="navbtn active" type="button" data-view="inicio">Rito</button>
+    <button class="navbtn" type="button" data-view="yoliztli">Yoliztli</button>
+    <button class="navbtn" type="button" data-view="probe">Known Probe</button>
+    <button class="navbtn" type="button" data-view="prompts">8 No-Prompts</button>
+    <button class="navbtn" type="button" data-view="checklist">Checklist</button>
+    <button class="navbtn" type="button" data-view="isd">ISD</button>
+    <button class="navbtn" type="button" data-view="glifos">16 Glifos</button>
+    <p class="kicker" style="margin:1.2rem 0.55rem 0.4rem">Archivo</p>
+    <button class="navbtn" type="button" id="export-json">Exportar JSON</button>
+    <button class="navbtn" type="button" id="export-csv">Exportar CSV</button>
+    <label class="navbtn" style="cursor:pointer">Importar JSON
+      <input id="import-json" type="file" accept="application/json" hidden>
+    </label>
+    <button class="navbtn" type="button" id="reset">Borrar local</button>
+  </aside>
+
+  <main class="app-main">
+    <span class="local-banner">Datos locales · nunca salen de este navegador · cero CDN</span>
+    <div id="toast" class="pill" style="opacity:0;transition:opacity .2s;margin-left:.6rem"> </div>
+
+    <section class="view active" id="view-inicio">
+      <p class="kicker">Pack No-Prompts MCC · FronterIA-Lab [Indioyori]</p>
+      <h1 style="font-size:clamp(2rem,5vw,3.2rem)">El LLM es asistente,<br>no árbitro.</h1>
+      <p class="lede">Esta herramienta es el pack. No hay cuenta. No hay nube. Llenas tu Yoliztli, calibras con lo que ya sabes, copias el No-Prompt y auditas la respuesta. Si el modelo falla la calibración, la sesión se marca NO CALIBRADA.</p>
+      <div class="grid-3" style="margin:1.6rem 0">
+        <article class="stat"><b>01</b> Declara contexto</article>
+        <article class="stat"><b>02</b> Calibra (3.2)</article>
+        <article class="stat"><b>03</b> Bifurca y verifica</article>
+      </div>
+      <p>Secuencia ritual: <strong>Capa 1 → Glifo 3.2 KNOWN_PROBE → Capa 2 → Capa 3 → Capa 4</strong>. No saltes la calibración. Es el equivalente a tarar una báscula antes de pesar.</p>
+      <div class="cta-row">
+        <button class="btn" type="button" data-view-jump="yoliztli">Empezar por Yoliztli</button>
+        <button class="btn ghost" type="button" id="ritual">Copiar los 8 en orden</button>
+      </div>
+      <hr class="line">
+      <blockquote class="quote">Una solución crea dependencia. Un marco crea capacidad. Entras con una pregunta; sales con criterio.</blockquote>
+    </section>
+
+    <section class="view" id="view-yoliztli">
+      <p class="kicker">Capa 1 · Ancla material</p>
+      <h2>Plantilla Yoliztli</h2>
+      <p>Yoliztli: vida / existencia / ser vivido. Esto no es un Excel de “finanzas personales”. Es el estándar conocido contra el que se calibra el modelo.</p>
+      <div class="row-2">
+        <div>
+          <label for="p-quien">Soy</label>
+          <input id="p-quien" placeholder="Oficio, rol, sin romanticismo">
+          <label for="p-territorio">Territorio</label>
+          <input id="p-territorio" placeholder="Municipio, estado, país">
+          <label for="p-mes">Mes en curso</label>
+          <input id="p-mes" placeholder="Agosto 2026">
+          <label for="p-moneda">Moneda</label>
+          <input id="p-moneda" placeholder="MXN">
+          <label for="p-regimen">Régimen / forma de cobro</label>
+          <input id="p-regimen" placeholder="RESICO, honorarios, informal, cooperativa…">
+          <label for="p-banco">Circuito de pago</label>
+          <input id="p-banco" placeholder="SPEI, OXXO, efectivo, tanda…">
+        </div>
+        <div>
+          <label for="p-tiempo">Tiempo disponible</label>
+          <input id="p-tiempo" placeholder="Horas/semana reales">
+          <label for="p-efectivo">Efectivo disponible ahora</label>
+          <input id="p-efectivo" placeholder="Cantidad">
+          <label for="p-deuda">Deuda o compromiso ineludible</label>
+          <input id="p-deuda" placeholder="Qué / cuánto / cuándo">
+          <label for="p-cuidado">Cuidado o trabajo no remunerado</label>
+          <input id="p-cuidado" placeholder="Quién depende de ti">
+          <label for="p-infra">Infraestructura</label>
+          <input id="p-infra" placeholder="Celular, café internet, banco, factura">
+          <label for="p-vocabulario">Vocabulario situado (no traducir)</label>
+          <input id="p-vocabulario" placeholder="Palabras de tu pueblo, oficio o casa">
+        </div>
+      </div>
+      <div class="cta-row" style="margin:1rem 0 2rem">
+        <button class="btn" type="button" id="save-perfil">Guardar Yoliztli</button>
+      </div>
+      <div class="row-3" style="margin-bottom:1.2rem">
+        <article class="stat">Ingresos <b id="sum-in">—</b></article>
+        <article class="stat">Gastos <b id="sum-out">—</b></article>
+        <article class="stat">Neto <b id="sum-net">—</b></article>
+      </div>
+      <h3>Ingresos del mes</h3>
+      <div id="ingresos"></div>
+      <button class="btn small ghost" type="button" id="add-ingreso" style="margin:0.6rem 0 1.4rem">+ Ingreso</button>
+      <h3>Gastos del mes</h3>
+      <div id="gastos"></div>
+      <button class="btn small ghost" type="button" id="add-gasto" style="margin:0.6rem 0 1.4rem">+ Gasto</button>
+      <label for="bitacora">Bitácora de sesión (qué te dijo la IA y qué falló)</label>
+      <textarea id="bitacora" placeholder="Fecha, modelo, qué No-Prompt usaste, qué alucinó, qué verificaste."></textarea>
+    </section>
+
+    <section class="view" id="view-probe">
+      <p class="kicker">Glifo 3.2 · KNOWN_PROBE</p>
+      <h2>Calibración contra lo ya vivido</h2>
+      <p>Llena “Yo ya lo sé” con números de tu mes pasado. Luego pega NP-03 en el modelo, copia lo que te responda en “La IA dijo” y mira la línea base de Certeza sin Sustancia.</p>
+      <div class="row-2" style="margin:1rem 0">
+        <article class="stat">Acierto <b id="probe-score">—</b></article>
+        <article class="stat">Fallo <b id="probe-fail">—</b></article>
+      </div>
+      <div class="meter"><span id="probe-meter" style="width:0"></span></div>
+      <p id="probe-flag" class="lede"></p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Pregunta</th><th>Yo ya lo sé</th><th>La IA dijo</th></tr></thead>
+          <tbody id="probe-rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="view" id="view-prompts">
+      <p class="kicker">Capas 1–4 · lenguaje de negocio</p>
+      <h2>Los 8 No-Prompts</h2>
+      <p>Se rellenan solos con tu Yoliztli. Cópialos en orden. No son hechizos. Son intervenciones sobre la gramática del modelo.</p>
+      <div id="prompts-list"></div>
+    </section>
+
+    <section class="view" id="view-checklist">
+      <p class="kicker">Capa 3 · Guía de evaluación</p>
+      <h2>Diez preguntas contra el halago</h2>
+      <p>Audita la respuesta. Si no llega a 8/10, no ejecutes. El checklist es el canal de certeza que el Transformer no tiene.</p>
+      <article class="stat" style="margin:1rem 0">Puntaje <b id="check-score">0 / 10</b></article>
+      <div class="meter"><span id="check-meter" style="width:0"></span></div>
+      <p id="check-verdict"></p>
+      <div id="check-list"></div>
+    </section>
+
+    <section class="view" id="view-isd">
+      <p class="kicker">Índice de Soberanía de Decisión</p>
+      <h2>ISD = C1×0.35 + C2×0.30 + C3×0.20 + C4×0.15</h2>
+      <p>Métrica de Méndez Valdez. No mide “qué tan buena es la IA”. Mide qué tanto del procesamiento y de la verificación sigue siendo tuyo. C4 es IVAES: verificabilidad de outputs de alta especificidad (hashes, fechas, versiones, citas).</p>
+      <article class="stat" style="margin:1rem 0">ISD <b id="isd-total">0</b></article>
+      <div class="meter"><span id="isd-meter" style="width:0"></span></div>
+      <p id="isd-note"></p>
+      <label>C1 · Localidad de datos y procesamiento <span id="c1-val"></span></label>
+      <input id="c1" type="range" min="0" max="100">
+      <label>C2 · Calibración (KNOWN_PROBE de esta sesión) <span id="c2-val"></span></label>
+      <input id="c2" type="range" min="0" max="100">
+      <label>C3 · Independencia de la recomendación (¿puedes actuar sin el modelo?) <span id="c3-val"></span></label>
+      <input id="c3" type="range" min="0" max="100">
+      <label>C4 · IVAES (datos exactos anclados a fuente, no generados) <span id="c4-val"></span></label>
+      <input id="c4" type="range" min="0" max="100">
+    </section>
+
+    <section class="view" id="view-glifos">
+      <p class="kicker">Atlas</p>
+      <h2>Dieciséis operaciones</h2>
+      <p>Modularidad: cada capa sola corrige. La calibración completa pide las cuatro. Independiente del modelo. Costo computacional extra para ti: cero.</p>
+      <div class="grid-2" style="margin-top:1rem" id="atlas"></div>
+    </section>
+  </main>
+
+  <script src="../js/app.js"></script>
+  <script>
+    document.getElementById("atlas").innerHTML = [
+      ["1.1 CONTEXT_DECLARE", "Declara identidad situacional. No es personalización: es corrección de variable."],
+      ["1.2 CONSTRAINT_SET", "Techo real de tiempo, dinero, acceso, infraestructura. Elimina respuestas genéricas."],
+      ["1.3 LOCALE_INJECT", "Entorno económico, geográfico, cultural. Data que cambia el output."],
+      ["1.4 REGISTER_VERIFY", "Vocabulario situado. Si el modelo corrige, marcaste el borde de su corpus."],
+      ["2.1 FORK_LOGIC", "Otra lógica, no otra opción. Rompe la convergencia a máxima verosimilitud."],
+      ["2.2 COUNTER_GENERATE", "La mejor argumentación contra su propia respuesta. Elocuencia ≠ certeza."],
+      ["2.3 COST_EXPOSE", "Trade-offs explícitos. Los costos se omiten porque bajan la verosimilitud percibida."],
+      ["2.4 TENSION_HOLD", "Eficiente y correcta a la vez, sin reconciliar. La tensión es información."],
+      ["3.1 SOURCE_DEMAND", "Fuente primaria o dato no verificado."],
+      ["3.2 KNOWN_PROBE", "Calibrar el instrumento contra el Yoliztli. La operación más importante."],
+      ["3.3 CROSS_MODEL", "Misma query a dos modelos. Divergencia con la misma certeza = formato, no evidencia."],
+      ["3.4 CONFIDENCE_INVERT", "Que declare sus puntos de menor confianza."],
+      ["4.1 CRITERIA_EXTRACT", "¿Qué criterios evalúo? No: ¿qué hago?"],
+      ["4.2 QUESTION_GENERATE", "Preguntas para ti, no respuestas para memorizar."],
+      ["4.3 STRUCTURE_EXTRACT", "Andamio vacío. El material lo pones tú."],
+      ["4.4 EXIT_PROTOCOL", "Señales observables en tu realidad, independientes del modelo."]
+    ].map(([k,v]) => `<article class="glyph"><code>${k}</code><p>${v}</p></article>`).join("");
+
+    document.querySelectorAll("[data-view-jump]").forEach((b) => {
+      b.addEventListener("click", () => {
+        document.querySelector(`.navbtn[data-view="${b.dataset.viewJump}"]`).click();
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+PACK NO-PROMPTS MCC + PLANTILLA DE CONTROL
+FronterIA-Lab [Indioyori]
+$37 USD · $690 MXN
+CC BY-NC-SA 4.0
+
+CÓMO ABRIRLO
+1. Abre abrir-aqui.html con cualquier navegador. No necesita internet.
+2. Llena Yoliztli. Los datos se quedan en ESTE navegador (localStorage).
+3. Copia los No-Prompts en orden. No saltes Known Probe.
+4. Audita con el checklist. Menos de 8/10: no ejecutes.
+
+ARCHIVOS
+- abrir-aqui.html     herramienta local (el producto)
+- docs/manual-no-prompts.md
+- docs/checklist.md
+- plantillas/yoliztli.csv
+- plantillas/known-probe.csv
+
+El LLM es asistente, no árbitro.
+Tu mente no está en venta.

@@ -1,34 +1,87 @@
 # NO_PROMPTS-MCC
-Empaqueta los "no-prompts" para la venta
 
+**Pack de No-Prompts MCC + Plantilla Yoliztli**  
+FronterIA-Lab [Indioyori] · $37 USD / $690 MXN · CC BY-NC-SA 4.0
 
-🧠 El Concepto del Producto: "No-Prompts" vs. "Prompts"
+El mercado está saturado de *“500 prompts para ChatGPT”*. Esos packs entrenan la servidumbre: le pides a un Transformer que te dé *la* respuesta, y te la da con certeza sin sustancia. Este repositorio empaqueta lo contrario.
 
-El mercado está saturado de *"500 prompts para ChatGPT"*. Tu producto dice: *"Esos son basura. La IA miente con seguridad. Aquí tienes el método para que la IA te dé respuestas útiles en lugar de halagos. Y de paso, te doy la plantilla para que los datos sean tuyos, no de la nube."*
+> Esos son basura. La IA miente con seguridad. Aquí está el método para que te dé respuestas útiles en lugar de halagos. Y de paso, la plantilla para que los datos sean tuyos, no de la nube.
 
+- Abrir la **landing**: [`index.html`](index.html)
+- Abrir la **herramienta local** (el producto): [`pack/abrir-aqui.html`](pack/abrir-aqui.html)
+- Atlas de 16 glifos: [`protocolo/atlas.md`](protocolo/atlas.md)
 
+No necesita cuenta, build ni internet. Los números de la plantilla viven en `localStorage`.
 
-📦 Estructura del Producto "Pack de No-Prompts MCC + Plantilla de Control"
+## Qué es el producto
 
-Te dejo adjunto un documento con la propuesta para la estructura y te dejo aquí otra propuesta de estructura:
+Tres piezas, una sola lógica: anclar el modelo a la realidad material **antes** de dejarlo hablar de dinero.
 
-Este es un **paquete descargable (ZIP)** que contiene 3 archivos. El precio sugerido: **$37 USD (aprox. $700 MXN)**. Es un precio premium justificado por el marco teórico único.
+| Pieza | Archivo | Capa MCC |
+| --- | --- | --- |
+| Plantilla Yoliztli | `pack/abrir-aqui.html` + `pack/plantillas/yoliztli.csv` | Capa 1 + glifo 3.2 KNOWN_PROBE |
+| Manual de 8 No-Prompts | `pack/docs/manual-no-prompts.md` | Capas 2–4, lenguaje de negocio |
+| Guía de evaluación | `pack/docs/checklist.md` | Capa 3: el canal de certeza que el modelo no tiene |
 
-| Archivo | Contenido | ¿Cómo aplica el MCC? |
-| :--- | :--- | :--- |
-| **1. Plantilla Yoliztli (Google Sheets)** | Dashboard de ingresos/gastos/facturas. **Incluye una pestaña llamada "KNOWN_PROBE"** donde el usuario escribe sus datos reales del mes pasado para calibrar a la IA. | **Capa 1 (Contexto)** y **Glifo 3.2 (Calibración)**. La plantilla es el ancla de la *realidad material* del usuario. |
-| **2. Manual de No-Prompts (PDF)** | No son 50 prompts. Son **8 "No-Prompts"** específicos (basados en los glifos del MCC) para pedirle a la IA que gestione sus finanzas sin alucinar. | **Capas 2, 3 y 4** del MCC. Traducidos a lenguaje de negocios. |
-| **3. Guía de Evaluación (Checklist)** | Una lista de 10 preguntas para evaluar la respuesta de la IA (¿Te dio fuentes? ¿Te mostró costos ocultos? ¿Te dio más de una opción?). | **Capa 3 (Verificación de Certeza)**. Rompe la dependencia del usuario hacia la IA. |
+Los 8 No-Prompts no son hechizos. Son glifos traducidos:
 
+1. Yoliztli Declare · 2. Locale Inject · 3. Known Probe · 4. Fork Logic  
+5. Cost Expose · 6. Tension Hold · 7. Source or Silence · 8. Framework Exit
 
+Secuencia ritual: **Capa 1 → Glifo 3.2 → Capa 2 → Capa 3 → Capa 4**.
 
-TU ERES EL ENCARGADO DE DECIDIR LA ESTRUCTURA FINAL PARA LA ENTREGA, EL PRECIO Y LOS CANALES DE VENTA.
+## Decisiones de entrega, precio y canal
 
-Te dejo ejemplos de imágenes por si le agregas diseño. 
+El brief original pedía decidir estructura, precio y canales. Queda cerrado así:
 
-Colores: Negro mate, blanco y detalles anahuacas, ejemplos en las imágenes. 
+### Entrega
 
-Producto hecho por: FronterIA-Lab [Indioyori]
+Un ZIP cuyo corazón es una herramienta HTML local, no un Google Sheet. Google Sheet contradice el marco: los datos del Yoliztli no pueden vivir en un servidor ajeno. CSV se incluye para quien quiera Excel u otra hoja **offline**.
 
+Cómo servir el repo en local:
 
-Y te dejo mis papers para que entiendas de donde viene y puedas mejorarlo y hacerlo un producto político y comercial al mismo tiempo.
+```bash
+python3 -m http.server 8765
+# http://127.0.0.1:8765/
+```
+
+Cómo empaquetar el ZIP de venta:
+
+```bash
+bash scripts/empaquetar.sh
+```
+
+### Precio
+
+**$37 USD / $690 MXN**, pago único. El brief sugería ~$700 MXN. Se redondea a un precio que se puede pedir en WhatsApp sin calculadora y que sigue siendo premium frente a un PDF de prompts.
+
+No es un curso. Es el producto de entrada. Escalera:
+
+| Peldaño | Precio | Rol |
+| --- | --- | --- |
+| Pack No-Prompts (este repo) | $37 / $690 MXN | Puerta. Circula. |
+| Taller MCC en vivo | cupo limitado | El rito. El pack es el material. |
+| Curso estudiantes | $99 USD | Upsell (propuesta comercial en `corpus/catalog/`) |
+| Curso investigadores | $299 USD | Upsell |
+| RAG soberano | $49–$199 | Infra local, no este ZIP |
+
+### Canales
+
+1. **Directo (prioridad).** Esta landing + Mercado Pago / Stripe + WhatsApp. El relato no se alquila.
+2. **Taller MCC.** Los carteles de `corpus/visual/` ya tienen URL y fecha. El pack se entrega al inscribirse.
+3. **Hotmart o Gumroad** solo como espejo de pago, no como dueño de la narrativa.
+4. **No.** Udemy, Amazon KDP, marketplaces de prompts. Colonizan el canal y aplanan el marco a “productivity tips”.
+
+## Identidad
+
+Negro mate, papel, cian, magenta, grecas. Quincunx (cuatro direcciones + centro) como marca. Cero Google Fonts, cero analytics, cero CDN: el producto practica la soberanía que predica.
+
+## Corpus
+
+Los papers de Dolores Méndez Valdez están en `corpus/papers/`. Copias con nombre ASCII para la web: `corpus/catalog/`. No son adorno. Son el código fuente del pack.
+
+## Licencia
+
+CC BY-NC-SA 4.0. FronterIA-Lab puede venderlo. Un tercero no puede reempaquetarlo como *prompt pack* corporativo.
+
+El LLM es asistente, no árbitro. Tu mente no está en venta.
